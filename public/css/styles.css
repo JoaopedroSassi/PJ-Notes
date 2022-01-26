@@ -12,6 +12,27 @@ h1{
    min-height: 80vh;
 }
 
+#main-container .actions-column{
+   display: flex;
+}
+
+.title-column{
+   width: 100%;
+}
+
+.title-column a{
+   color: #212529;
+   text-decoration: none;
+}
+
+.title-column a:hover{
+   text-decoration: underline;
+}
+
+.btn{
+   margin-right: 12px;
+}
+
 footer{
    height: 20vh;
    width: 100%;
