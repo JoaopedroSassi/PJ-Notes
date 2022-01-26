@@ -19,8 +19,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 const notesRoutes = require('./routes/notes');
 
 //Routes
-app.get('/', (req, res) => {
-   res.render('home');
+app.get('/', async function(req, res) {
+   const notes = await db.getDb().db().collection('notes').find({}).toArray();
+   res.render('home', {notes});
 });
 
 app.use('/notes', notesRoutes);
