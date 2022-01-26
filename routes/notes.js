@@ -29,6 +29,14 @@ router.post('/', (req, res) => {
    res.redirect(301, '/');
 });
 
+router.get('/edit/:id', async function(req, res){
+   const id = new ObjectId(req.params.id);
+
+   const note = await db.getDb().db().collection('notes').findOne({_id: id});
+
+   res.render('notes/edit', {note});
+});
+
 router.post('/delete/', (req, res) => {
    const data = req.body;
    const id = new ObjectId(data.id);
