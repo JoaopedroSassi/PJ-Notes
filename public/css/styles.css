@@ -1,3 +1,19 @@
-h1{
-   color: red;
+html, body{
+   height: 100%;
+}
+
+#main-container{
+   padding: 30px 0;
+   max-width: 500px;
+   min-height: 80vh;
+}
+
+footer{
+   height: 20vh;
+   width: 100%;
+   color: white;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
