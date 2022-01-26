@@ -4,6 +4,14 @@ const {ObjectId} = require('mongodb');
 
 const router = Router();
 
+router.get('/:id', async function(req, res){
+   const id = new ObjectId(req.params.id);
+
+   const note = await db.getDb().db().collection('notes').findOne({_id: id});
+
+   res.render('notes/detail', {note});
+});
+
 router.get('/', (req, res) => {
    res.render('notes/create');
 });
